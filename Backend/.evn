@@ -1,3 +1,0 @@
-MONGO_URI=mongodb+srv://payaldaskunu30:r9rJBPPmgwZY4nG9@cluster0.qhpmp.mongodb.net/
-JWT_SECRET=your_jwt_secret_key
-VITE_API_GENERATIVE_LANGUAGE_CLIENT=AIzaSyAYMP-D54ty2tRR4MlVVNgwOZ_8IHJE_dk

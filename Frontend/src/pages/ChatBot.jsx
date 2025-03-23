@@ -25,13 +25,25 @@ const ChatBot = () => {
     setChatHistory((prev) => [...prev, { type: "question", content: currentQuestion }]);
 
     try {
-      const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAYMP-D54ty2tRR4MlVVNgwOZ_8IHJE_dk",
-        method: "post",
-        data: { contents: [{ parts: [{ text: question }] }] },
-      });
+      // const response = await axios({
+      //   url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAYMP-D54ty2tRR4MlVVNgwOZ_8IHJE_dk",
+      //   method: "post",
+      //   data: { contents: [{ parts: [{ text: question }] }] },
+      // });
 
-      const aiResponse = response.data.candidates[0].content.parts[0].text;
+      const response = await axios.post('http://localhost:5000/api/chat', {
+        protocol: "mcp",
+        version: "1.0",
+        module: "chat",
+        context_id: "user123",
+        data: { user_message: currentQuestion }
+      });
+      
+      
+      const aiResponse = response.data.data.response;
+
+
+      // const aiResponse = response.data.candidates[0].content.parts[0].text;
       setChatHistory((prev) => [...prev, { type: "answer", content: aiResponse }]);
     } catch (error) {
       console.log(error);
@@ -90,7 +102,7 @@ const ChatBot = () => {
         <form onSubmit={generateAnswer} className="p-4 bg-gray-100 rounded-b-2xl">
           <div className="flex items-center space-x-2">
             <textarea
-              className="flex-1 p-3 border border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none"
+              className="bg-black flex-1 p-3 border border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 resize-none"
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               placeholder="Type your message..."
