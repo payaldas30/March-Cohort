@@ -30,7 +30,7 @@ const ChatBot = () => {
     ]);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/chat", {
+      const response = await axios.post("https://march-cohort.onrender.com/api/chat", {
         protocol: "mcp",
         version: "1.0",
         module: "chat",

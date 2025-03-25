@@ -17,7 +17,7 @@ const LandingPage = () => {
         conversations like never before.
       </p>
 
-      <a href="http://localhost:5000/auth/google">
+      <a href="https://march-cohort.onrender.com/auth/google">
         <button
           // onClick={handleOAuthLogin}
           className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition"
