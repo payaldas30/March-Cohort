@@ -30,7 +30,7 @@ const ChatBot = () => {
     ]);
 
     try {
-      const response = await axios.post("https://march-cohort.onrender.com/api/chat", {
+      const response = await axios.post("http://localhost:5000/api/chat", {
         protocol: "mcp",
         version: "1.0",
         module: "chat",
@@ -66,7 +66,7 @@ const ChatBot = () => {
       <div className="w-full max-w-3xl h-[80vh] bg-white rounded-2xl shadow-2xl flex flex-col">
         {/* Header */}
         <header className="text-center p-4 border-b bg-indigo-500 rounded-t-2xl">
-          <h1 className="text-2xl font-bold text-white">Chat AI</h1>
+          <h1 className="text-2xl font-bold text-white">Mahagyaan_AI</h1>
         </header>
 
         {/* Chat Messages */}
@@ -78,7 +78,7 @@ const ChatBot = () => {
             <div className="h-full flex flex-col items-center justify-center text-center p-6">
               <div className="bg-indigo-50 rounded-xl p-6 max-w-lg">
                 <h2 className="text-xl font-bold text-indigo-600 mb-3">
-                  Welcome to Chat AI! 👋
+                  Welcome to Mahagyaan_AI! 👋
                 </h2>
                 <p className="text-gray-600">
                   Ask me anything! I can help with:
